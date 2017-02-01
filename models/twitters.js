@@ -7,10 +7,10 @@ var twitter = require('twitter'),
 
 class Twitters {
     constructor(){
-        this.key = "1ym22SQ4QHaumr0owPnncrDpZ";
-        this.secret = "Jtt3MJC3AeKqo6YqbYiLIuMXHOAbFxE6CEfCKJ4dkWGEotNmyN";
-        this.access_token = "91292767-gb6twcha8mrwLyYUb48lRW1b2i5leWiVjsxg7dHTq";
-        this.access_token_secret = "EqdgnMVDbYM7HkMNtGAxo2Rotfh8ixNTsg9y6fHcYXade";
+        this.key = process.env.twitter_key;
+        this.secret =  process.env.twitter_secret; 
+        this.access_token = process.env.twitter_access_token;
+        this.access_token_secret = process.env.twitter_access_token_secret;
         this.twitter = new twitter({
           consumer_key: this.key,
           consumer_secret: this.secret,
