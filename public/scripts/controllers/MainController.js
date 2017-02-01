@@ -25,7 +25,7 @@ var app = angular.module('MainCtrl', []).controller('MainController', function($
     });
     
     $scope.$on('finished-game', function(e){
-        $scope.TitleText = "Finsished!";
+        $scope.TitleText = "Finished!";
     })
     
     $scope.facebookclick = function(){
