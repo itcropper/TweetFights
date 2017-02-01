@@ -11,8 +11,9 @@ class User {
         this.mentions = [];
         this.name = '';
         this.bannerimg = '';
+        
         try{
-            //console.log(twit.map(m => m.created_at));
+            twit = twit.filter(m => m.text.indexOf("RT ") == -1);
             this.image = twit.map(m => m.user.profile_image_url_https)[0].replace("normal", "200x200");
             this.bannerimg = twit.map(m => m.user.profile_banner_url)[0];
             this.name = twit.map(m => m.user.name)[0];
@@ -22,7 +23,7 @@ class User {
             this.hashtags = this.grabPopular(this.tweets.map(m => m.hashtags.map(h => "#" + h)).reduce((p, c) => p.concat(c)));
             this.mentions = this.grabPopular(this.tweets.map(m => m.mentions.map(b => "@" + b)).reduce((p, c) => p.concat(c)));
         }catch(e){
-
+            console.log('well somethings wrong');
         }
     }
     

@@ -13,7 +13,7 @@ angular.module('HomeCtrl', []).controller('HomeController', function($scope, $ht
         maxGuesses = 0;
     
     let scrubText = function(txt){
-        return txt.replace(/----blurry----/g, "<span class='blurry' ></span>.")
+        return txt.replace(/----blurry----/g, "<span class='blurry' ></span>")
     }
     
     let renderResponse = function(){

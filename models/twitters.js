@@ -7,10 +7,20 @@ var twitter = require('twitter'),
 
 class Twitters {
     constructor(){
-        this.key = process.env.twitter_key;
-        this.secret =  process.env.twitter_secret; 
-        this.access_token = process.env.twitter_access_token;
-        this.access_token_secret = process.env.twitter_access_token_secret;
+        
+        try {
+            var envVars = require("../environment");
+            this.key = envVars.twitter_key;
+            this.secret =  envVars.twitter_secret; 
+            this.access_token = envVars.twitter_access_token;
+            this.access_token_secret = envVars.twitter_access_token_secret;            
+        }catch(e){
+            this.key = process.env.twitter_key;
+            this.secret =  process.env.twitter_secret; 
+            this.access_token = process.env.twitter_access_token;
+            this.access_token_secret = process.env.twitter_access_token_secret;
+        }
+        
         this.twitter = new twitter({
           consumer_key: this.key,
           consumer_secret: this.secret,
