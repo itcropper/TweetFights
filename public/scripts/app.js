@@ -1,0 +1,1 @@
+angular.module('TwitFights', ['ngRoute', 'appRoutes', 'ngAnimate', 'MainCtrl', 'HomeCtrl']);

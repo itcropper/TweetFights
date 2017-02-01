@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Tweet Fights!</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles/vendor/font-awesome.min.css" >
+    <link rel="stylesheet" type="text/css" href="./styles/main.css" >
+
+</head>
+<body ng-app="TwitFights" ng-controller="MainController">
+
+    <div class="main-content">
+        <h1 class="center title" ng-bind="TitleText"></h1>
+        <div  ng-view></div>
+        
+        <footer>
+            <div class="share-links">
+                <h3 class="h3">Share with your friends</h3>
+                <ul class="social-buttons">
+                    <li ng-click="facebookclick()"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!-- JS -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    
+    <script src="scripts/extensions.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="scripts/controllers/MainController.js"></script>
+    <script src="scripts/controllers/homecontroller.js"></script>
+    <script src="scripts/services/TwitService.js"></script>
+    <script src="scripts/appRoutes.js"></script>
+    <script src="scripts/app.js"></script>
+    
+</body>
+</html>

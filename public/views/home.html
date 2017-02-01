@@ -1,0 +1,44 @@
+<div ng-switch="moduleState" class="app-body">
+    <div ng-switch-when="query" >
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="form-group">
+                    <label ng-bind="label" class="center" for="">Enter a Twitter handle</label>
+                    <input ng-keypress="keypress($event)" ng-model="form.username" class="form-control" name="username" type="text" placeholder="@username" autocomplete="off" />
+                    <br>
+                    <button ng-click="submit()" class="btn center is-large modernize tblue submit-username">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="compare">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1" ng-click="guess($event)">
+                <div class="tweet-text-module">
+                    <p ng-bind-html="text1"></p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="image-container">
+                    <img ng-src="{{leader_profile_img}}" />
+                    <h3 class="h2 center">{{name}}</h3>
+                    <p class="h4 center">SCORE</p>
+                    <p class="h4 center">{{score}}</p>
+                </div>
+            </div>
+            <div class="col-md-4" ng-click="guess($event)">
+                <div class="tweet-text-module">
+                    <p ng-bind-html="text2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-switch-when="finished">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2 class="center">{{scoreComments}}</h2>
+                <p class="h4 center">{{scoreResults}}</p>
+            </div>
+        </div>
+    </div>
+</div>
