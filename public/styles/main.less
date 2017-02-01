@@ -84,6 +84,17 @@ body {
         }
     }
     
+    @media (max-width:480px) { /* change depending on the mobiles you're targeting */
+        h1.title {
+            font-size:30px !important;
+        }
+        input {
+            height: 50px !important;
+            font-size:25px !important;
+            
+        }
+}
+    
     
     .tweet-row {
         margin-top:5%;
@@ -130,6 +141,13 @@ body {
             transition: color, border-color, .3s;
             color:slategrey;
             border-color:slategrey;
+        }
+    }
+    a.modernize {
+        color:white;
+        cursor: pointer;
+        &:visited {
+            color:white;
         }
     }
     .modernize.tblue {
