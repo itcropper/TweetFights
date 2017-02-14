@@ -1,1 +1,1 @@
-angular.module('TwitFights', ['ngRoute', 'appRoutes', 'ngAnimate', 'MainCtrl', 'HomeCtrl']);
+angular.module('TwitFights', ['ngRoute', 'appRoutes', 'ngAnimate', 'angularUtils.directives.dirDisqus', 'MainCtrl', 'HomeCtrl', 'PostCtrl']);

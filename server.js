@@ -4,6 +4,7 @@ var express =           require('express'),
     bodyParser     =    require('body-parser'),
     methodOverride =    require('method-override'),
     path =              require('path'),
+    mongoose =          require('mongoose'),
     lessMiddleware =    require('less-middleware');
 
 
@@ -23,9 +24,22 @@ app.use('/fonts',    express.static(__dirname + '/public/fonts'));
 
 var PORT = process.env.PORT || 8000;
 
+var MONGOOSE_PORT =
+  process.env.MONGODB_URI ||
+  process.env.MONGOLAB_URI || 
+  process.env.MONGOHQ_URL  || 
+  'mongodb://localhost:27017;';
 
-require('./app/routes')(app)
+mongoose.connect(MONGOOSE_PORT, function (err, res) {
+  if (err) { 
+    console.log ('ERROR connecting to: ' + MONGOOSE_PORT + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + MONGOOSE_PORT);
+  }
+});
 
 http.listen(PORT, function(){
     console.log("Listening on 127.0.0.1/8000");
+    require('./app/routes')(app)
 });
+

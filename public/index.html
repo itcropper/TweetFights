@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tweet Fights!</title>
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <title>Too Much Right Now</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/vendor/font-awesome.min.css" >
-    <link rel="stylesheet" type="text/css" href="./styles/main.css" >
-
+    <link rel="stylesheet" type="text/css" href="/styles/vendor/font-awesome.min.css" >
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" >
+    <base href="/">
 </head>
 <body ng-app="TwitFights" ng-controller="MainController">
 
-    <div class="main-content">
-        <h1 class="center title" ng-bind="TitleText"></h1>
-        <div  ng-view></div>
-        
-        <footer>
-            <div class="share-links">
-                <h3 class="h3">Share with your friends</h3>
-                <ul class="social-buttons">
-                    <li ng-click="facebookclick()"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
-                </ul>
+    <div class="header-wrapper">
+        <div class="">
+            <div class="header-logo">
+                <h1>TMRN</h1>
             </div>
-        </footer>
+            <header>
+                <nav>
+                    <ul>
+                        <li>AWWWW</li>
+                        <li>Funny</li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <section class="col-md-8">
+                <div ng-view></div>               
+            </section>
+            <aside class="ads-and-info col-md-4">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Automa-side -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:600px"
+                     data-ad-client="ca-pub-8800807950229679"
+                     data-ad-test="on"
+                     data-ad-slot="2547951624"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </aside>
+        </div>
     </div>
 
+    <footer>
+        <div class="share-links">
+<!--            <h3 class="h3">Share with your friends</h3>-->
+            <ul class="social-buttons">
+                <li ng-click="facebookclick()"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+                <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+    </footer>     
 
 
 
@@ -42,9 +71,12 @@
     <!-- ANGULAR CUSTOM -->
     <script src="scripts/controllers/MainController.js"></script>
     <script src="scripts/controllers/HomeController.js"></script>
+    <script src="scripts/controllers/PostController.js"></script>
     <script src="scripts/services/TwitService.js"></script>
     <script src="scripts/appRoutes.js"></script>
     <script src="scripts/app.js"></script>
+    
+    <script src="/libs/angularUtils-disqus/dirDisqus.js"></script>
     
 </body>
 </html>

@@ -1,4 +1,4 @@
-    angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
     $routeProvider
 
@@ -6,14 +6,12 @@
         .when('/', {
             templateUrl: 'views/home.html',
             controller: 'HomeController'
+        })
+        .when('/post/:id', {
+            templateUrl: 'views/post.html',
+            controller: "PostController"
         });
 
-//        // nerds page that will use the NerdController
-//        .when('/nerds', {
-//            templateUrl: 'views/nerd.html',
-//            controller: 'NerdController'
-//        });
-
-    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
 }]);
