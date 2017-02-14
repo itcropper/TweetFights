@@ -1,15 +1,15 @@
 var tumblr = require('tumblr.js');
 var Post = require('../models/SinglePost');
-var envVars = require("../environment");
 var terms = require('./statics/terms')[0];
 
 class Tumblr {
     constructor(){
         try{
+            var envVars = require("../environment");
             this.client = tumblr.createClient({consumer_key: envVars.Tumblr.api_key});
         }
         catch(e){
-            this.client = tumblr.createClient({ consumer_key: process.env.consumer_key});
+            this.client = tumblr.createClient({ consumer_key: process.env.tumblr.consumer_key});
         }
 //        this.query(terms);
         setInterval(() => this.query(terms), 1000 * 60 * 10);
