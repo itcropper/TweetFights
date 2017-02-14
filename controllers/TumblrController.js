@@ -11,7 +11,7 @@ class Tumblr {
         catch(e){
             this.client = tumblr.createClient({ consumer_key: process.env.tumblr_consumerKey});
         }
-//        this.query(terms);
+        this.query(terms);
         setInterval(() => this.query(terms), 1000 * 60 * 10);
     }
    
