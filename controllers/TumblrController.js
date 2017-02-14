@@ -9,7 +9,7 @@ class Tumblr {
             this.client = tumblr.createClient({consumer_key: envVars.Tumblr.api_key});
         }
         catch(e){
-            this.client = tumblr.createClient({ consumer_key: process.env.tumblr.consumer_key});
+            this.client = tumblr.createClient({ consumer_key: process.env.tumblr_consumerKey});
         }
 //        this.query(terms);
         setInterval(() => this.query(terms), 1000 * 60 * 10);

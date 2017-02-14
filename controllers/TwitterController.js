@@ -16,10 +16,10 @@ class Twitters {
             this.access_token = envVars.Twitter.access_token;
             this.access_token_secret = envVars.Twitter.access_token_secret;            
         }catch(e){
-            this.key = process.env.twitter.twitter_key;
-            this.secret =  process.env.twitter.twitter_secret; 
-            this.access_token = process.env.twitter.twitter_access_token;
-            this.access_token_secret = process.env.twitter.twitter_access_token_secret;
+            this.key = process.env.twitter_twitterKey;
+            this.secret =  process.env.twitter_twitterSecret; 
+            this.access_token = process.env.twitter_twitterAccessToken;
+            this.access_token_secret = process.env.twitter_twitterAccessTokenSecret;
         }
         
         this.twitter = new twitter({
