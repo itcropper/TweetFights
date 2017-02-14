@@ -8,7 +8,7 @@ var bod = null;
 class IGController {
     constructor(tag = "wereComingThor"){
         try {
-            var access_token = require("../environment").igaccess_token
+            var access_token = require("../environment").ig.access_token
             this.url = `https://api.instagram.com/v1/tags/${terms}/media/recent?access_token=${access_token}`
         }catch(e){
             this.url = `https://api.instagram.com/v1/tags/${terms}/media/recent?access_token=${process.env.ig.access_token}`
