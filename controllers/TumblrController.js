@@ -39,20 +39,21 @@ class Tumblr {
                     //console.log(m.featured_in_tag, m.tags);
                     return {
                         id: m.id,
-                        summary: m.summary,
+                        summary: m.summary, 
                         note_count: m.note_count,
                         img_link: m.photos ? m.photos[m.photos.length - 1].original_size.url : "",
                         tags: (m.featured_in_tag || []).concat(m.tags || []).map(n => n.toLowerCase())
                     };
                 }).filter(m => 
-                          m.img_link != "" && 
+                          m.img_link != "" &&  
                           m.summary &&
-                          (m.tags.filter(n => otherTerms.filter(o => n.toLowerCase().indexOf(o) > -1))).length &&
-                          (m.tags.filter(n => blacklisted.filter(o => n.toLowerCase().indexOf(o) > -1))).length === 0  
+                          new RegExp(blacklisted.join("|")).test(m.summary) == false && 
+                          m.tags.filter(n => new RegExp(otherTerms.join("|")).test(n)).length &&
+                          m.tags.filter(n => new RegExp(blacklisted.join("|")).test(n)).length == 0
                 ).sort((a,b) => b.note_count - a.note_count);
                 
                 if(g.length == 0){
-                    return console.log('Tumblr: No matching posts');
+                    return console.log('Tumblr: No matching posts'); 
                 }
                 g = g[0];
 
