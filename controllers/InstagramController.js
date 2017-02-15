@@ -13,7 +13,7 @@ class IGController {
         }catch(e){
             this.url = `https://api.instagram.com/v1/tags/${terms}/media/recent?access_token=${process.env.ig_accessToken}`
         }
-        this.search();
+        //this.search();
         setInterval(this.search, 1000 * 60 * 10);
     }
     

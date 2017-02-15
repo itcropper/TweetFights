@@ -3,34 +3,35 @@
     <div ng-repeat="post in posts">
 
         <div class="post">
-            <h3 ng-click="drillDown(post._id)" ng-hide="post.title == ''" class="h1 post-heading">{{post.title}}</h1>
-            <div class="post-body">
-                <div ng-click="drillDown(post._id)" class="img-wrapper">
-                    <img class="thumb" ng-src="{{post.img}}" />
-                </div>
-                <div class="post-snippet">{{post.snippet}}</div>
-                
-            </div>
-            
-            <div class="post-actions">
-            <div class="dropdown">
-                <button class="dropbtn fa fa-share-alt"></button>
-                <div class="dropdown-content">
-                    <div class="fb-share-button" data-href="https://tweet-fighter.herokuapp.com/" data-layout="button_count" data-size="large" data-mobile-iframe="true">
-                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftweet-fighter.herokuapp.com%2F&amp;src=sdkpreparse">Share</a>
-                    </div>
-                    <a href="#" class="fa fa-twitter-square"></a>
-                    <a href="#" class="fa fa-envelope"></a>
-                    <a href="#" class="fa fa-pinterest-square"></a>
-                </div>
+            <h3 ng-click="drillDown(post._id)" ng-hide="post.title == ''" class="h1 post-heading">{{post.title}}</h3>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="post-body">
+                        <div ng-click="drillDown(post._id)" class="img-wrapper">
+                            <img class="thumb" ng-src="{{post.img}}" />
+                        </div>
+                        <div class="post-snippet">{{post.snippet}}</div>
 
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="post-actions">
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                                <a href="#" ng-click="facebookclick(post._id)" class="fa fa-facebook-square"></a>
+                                <a href="#" class="fa fa-twitter-square"></a>
+                                <a href="#" class="fa fa-envelope"></a>
+                                <a href="#" class="fa fa-pinterest-square"></a>
+                            </div>
+
+                        </div>
+                        <div class="likeable">
+                            <span class="fa fa-thumbs-o-up"></span>
+                            <span class="fa fa-thumbs-o-down"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="likeable">
-                <span class="fa fa-thumbs-o-up"></span>
-                <span class="fa fa-thumbs-o-down"></span>
-            </div>
-        </div>
-            
             
         </div>
         

@@ -33,7 +33,7 @@ class Twitters {
         this.highestSoFar = {};
         this.lastHighest = {};
         
-        this.collect();
+        //this.collect();
         
         setInterval(() => {
             this.storeHighest();
